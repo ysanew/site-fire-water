@@ -7,7 +7,7 @@
     --index: calc(1vw + 1vh);
     --swiper-theme-color: #969ba1;
     --swiper-navigation-size: 35px;
-    --swiper-navigation-sides-offset: 100px;
+    --swiper-navigation-sides-offset: 50px;
     --swiper-pagination-bullet-size: 15px;
     --swiper-pagination-bottom: 35px;
     --swiper-pagination-bullet-inactive-color: #d0d0d0;
@@ -18,6 +18,7 @@ body {
 }
 .slider {
     height: 100vh;
+    box-shadow: inset 0 50px 50px #000, inset 0 -50px 50px #000;
 }
 .slider .slide {
     display: flex;
@@ -26,6 +27,11 @@ body {
 }
 .slide__content {
     text-align: center;
+    opacity: 0;
+    transition: opacity .25s ease;
+}
+.swiper-slide-active .slide__content {
+    opacity: 1;
 }
 .slide__content h2 {
     font-size: calc(var(--index) * 5);
@@ -48,7 +54,7 @@ body {
     font-size: calc(var(--index) * .9);
     color: rgba(255, 255, 255, .8);
     letter-spacing: calc(var(--index) * .23);
-    margin-bottom: calc(var(--index) * 2.5);
+    margin-bottom: calc(var(--index) * 1.75);
 }
 button {
     --button-color: rgba(255, 255, 255, 0.8);
@@ -66,9 +72,20 @@ button {
     border-radius: 10em;
     width: 55px;
     height: 55px;
-
 }
-
+.background-video {
+    position: fixed;
+    width: 95%;
+    height: 95%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: .7;
+    transition: opacity 2s ease-out;
+}
+.background-video .change {
+    opacity: 1;
+}
 
 
 

@@ -19,4 +19,6 @@ This is a visual demo site featuring animation effects and transitions.
 
 Inspired by a concept seen on YouTube.
 
+May behave differently in Chrome on Windows due to performance limitations in video currentTime animations.
+
 **Live demo:** [See it in action](https://ysanew.github.io/site-fire-water/)
